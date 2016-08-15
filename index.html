@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Your awesome title</title>
+  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://yourdomain.com/">
+  <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="http://yourdomain.com/feed.xml">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather+Sans:100,400,700,300' rel='stylesheet' type='text/css'>
+
+</head>
+
+
+  <body>
+    <header class="header">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img class="brand "alt="Brand" src="img/logo-resultados-digitais.svg">
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+        <div ng-app="myApp" ng-controller="IndexController" ng-cloak>
+  <div class="container-fluid bg-form" ng-init="Init()">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 content-landing">
+          <h1>Gerador de Jornada de Compra</h1>
+          <p>Defina e conheça de forma rápida e fácil os passos que os seus potenciais clientes dão até estarem prontos para comprar seu produto ou serviço.</p>
+          <a data-toggle="modal" href="#modalConversion" class="btn btn-success btn-lg visible-xs visible-sm btn-scroll"></span>Começar agora!</a>
+          <img class="img-responsive wrapper hidden-xs hidden-md" src="img/jornada-hori.svg">
+          <img class="img-responsive wrapper hidden-sm hidden-lg" src="img/jornada-vert.svg">
+
+          <div class="advantages sponsor">
+            <div class="circle-icon"><span class="icon icon-sponsor"></span></div>
+            <div class="text-advantages">
+              <h2 class="h4">Conheça</h2>
+              <p>Conheça os problemas e necessidades que seu cliente possui e ajude-o a resolvê-los.</p>
+            </div>
+          </div>
+
+          <div class="advantages chess">
+            <div class="circle-icon"><span class="icon icon-chess"></span></div>
+            <div class="text-advantages">
+              <h2 class="h4">Otimize</h3>
+              <p>Melhore sua estratégia de Marketing e seja mais assertivo nas suas comunicações.</p>
+            </div>
+          </div>
+
+          <div class="advantages graph">
+            <div class="circle-icon"><span class="icon icon-graph"></span></div>
+            <div class="text-advantages">
+              <h2 class="h4">Produza</h3>
+              <p>Receba ideias de conteúdo relevante a serem produzidos e gere mais oportunidades de negócio.</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-6 content-form hidden-sm hidden-xs">
+          <form role="form" class="box-form" name="myForm">
+            <div class="form-group">
+              <label for="name">Nome<span> *<span></label>
+              <input type="text" ng-model="Lead.Name" class="form-control" id="name" name="name" placeholder="Nome" required>
+              <span class="text-danger" ng-show="(myForm.$submitted || myForm.name.$touched) && myForm.name.$error.required">Preencha esse campo.</span>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail<span> *<span></label>
+              <input type="email" ng-model="Lead.Email" class="form-control" id="email" name="email" placeholder="E-mail" required>
+              <span class="text-danger" ng-show="(myForm.$submitted || myForm.email.$touched) && myForm.email.$error.required">Preencha esse campo.</span>
+              <span class="text-danger" ng-show="(myForm.$submitted || myForm.email.$touched) && myForm.email.$error.email">E-mail inválido.</span>
+            </div>
+            <div class="form-group">
+              <label>Cargo<span> *<span></label>
+                <select ng-model="Lead.Position" class="form-control" name="position" placeholder="Cargo" required>
+                  <option value="">Selecione</option>
+                  <option value="Analista de marketing">Analista de marketing</option>
+                  <option value="Gerente/Coordenador de Marketing">Gerente/Coordenador de Marketing</option>
+                  <option value="Gerente/Coordenador de Vendas">Gerente/Coordenador de Vendas</option>
+                  <option value="Diretor">Diretor</option>
+                  <option value="Sócio / CEO">Sócio / CEO</option>
+                  <option value="Outros Cargos">Outros Cargos</option>
+                  <option value="Estudante">Estudante</option>
+                </select>
+                <span class="text-danger" ng-show="(myForm.$submitted || myForm.position.$touched) && myForm.position.$error.required">Selecione um item da lista.</span>
+            </div>
+            <div class="form-group">
+              <label>Empresa<span> *<span></label>
+              <input type="text" ng-model="Lead.Company" class="form-control" id="company" name="company" placeholder="Empresa" required>
+              <span class="text-danger" ng-show="(myForm.$submitted || myForm.company.$touched) && myForm.company.$error.required">Preencha esse campo.</span>
+            </div>
+            <div class="form-group">
+              <label>Número de funcionários<span> *<span></label>
+              <select ng-model="Lead.NumberOfEmployees" class="form-control" id="size" name="numberOfEmployees" placeholder="Número de Funcionários" required>
+                <option value="">Selecione</option>
+                <option value="1">1</option>
+                <option value="2-3">2-3</option>
+                <option value="4-10">4-10</option>
+                <option value="11-50">11-50</option>
+                <option value="51-200">51-200</option>
+                <option value="Mais de 200">Mais de 200</option>
+              </select>
+              <span class="text-danger" ng-show="(myForm.$submitted || myForm.numberOfEmployees.$touched) && myForm.numberOfEmployees.$error.required">Selecione um item da lista.</span>
+            </div>
+            <div class="form-group">
+              <label>Área de atuação da empresa<span> *<span></label>
+              <select ng-model="Lead.OccupationArea" class="form-control" id="segment" name="occupationArea" placeholder="Área de Atuação" required>
+                <option value="">Selecione</option>
+                <option value="Software e Cloud">Software e Cloud</option>
+                <option value="Hardware">Hardware</option>
+                <option value="Telecomunicações">Telecomunicações</option>
+                <option value="Educação">Educação</option>
+                <option value="Agência">Agência</option>
+                <option value="Veículo de comunicação">Veículo de comunicação</option>
+                <option value="Consultoria">Consultoria</option>
+                <option value="Serviços corporativos">Serviços corporativos</option>
+                <option value="Ecommerce">Ecommerce</option>
+                <option value="Serviços para o consumidor">Serviços para o consumidor</option>
+                <option value="Turismo e Lazer">Turismo e Lazer</option>
+                <option value="Saúde">Saúde</option>
+                <option value="Industria de manufatura">Industria de manufatura</option>
+                <option value="RH e Recrutamento">RH e Recrutamento</option>
+                <option value="Serviços financeiros">Serviços financeiros</option>
+                <option value="Jurídico">Jurídico</option>
+                <option value="Imóveis">Imóveis</option>
+              </select>
+              <span class="text-danger" ng-show="(myForm.$submitted || myForm.occupationArea.$touched) && myForm.occupationArea.$error.required">Selecione um item da lista.</span>
+            </div>
+            <div class="form-group">
+              <label>Site da empresa<span> *<span></label>
+              <input type="text" ng-model="Lead.Website" class="form-control" id="text" name="website" placeholder="Site da empresa" required>
+              <span class="text-danger" ng-show="(myForm.$submitted || myForm.website.$touched) && myForm.website.$error.required">Preencha esse campo.</span>
+            </div>
+            <button type="button" ng-disabled="myForm.$invalid" ng-click="Send()" class="btn btn-success btn-lg full-width"><span class="icon-book dist-right"></span>Começar agora!</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="know-more">
+    <div class="container-fluid">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-offset-1 col-md-10">
+            <h2>Saiba mais sobre a Jornada de Compra</h2>
+            <p>A jornada de compra é o caminho que um determinado perfil de comprador percorre antes de realizar uma compra. São etapas que todos os compradores passam, na maioria das vezes sem nem mesmo saber que estão passando por elas.</p>
+            <p>Ao entender a jornada de compras do seu cliente, você sabe que tipo de informação é mais importante para ele e o momento em que essa informação é mais importante. A conversa fica muito melhor, já que ele tem acesso às informações certas no momento certo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- mobile cta -->
+  <a data-toggle="modal" href="#modalConversion" class="btn btn-success btn-lg full-width btn-fixed"></span>Começar agora!</a>
+  <!-- end mobile cta -->
+
+  <!-- Modal -->
+  <div id="modalConversion" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h2 class="modal-title">Gere sua jornada de compra agora!</h2>
+        <p>Basta preencher o formulário abaixo para começar.</p>
+      </div>
+      <div class="modal-content">
+        <div class="modal-body box-form">
+
+          <form role="form" class="box-form" name="myFormModal">
+            <div class="form-group">
+              <label for="name">Nome<span> *<span></label>
+              <input type="text" ng-model="Lead.Name" class="form-control" id="name" name="name" placeholder="Nome" required>             
+              <span class="text-danger" ng-show="(myFormModal.$submitted || myFormModal.name.$touched) && myFormModal.name.$error.required">Preencha esse campo.</span>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail<span> *<span></label>
+              <input type="email" ng-model="Lead.Email" class="form-control" id="email" name="email" placeholder="E-mail" required>
+              <span class="text-danger" ng-show="(myFormModal.$submitted || myFormModal.email.$touched) && myFormModal.email.$error.required">Preencha esse campo.</span>
+              <span class="text-danger" ng-show="(myFormModal.$submitted || myFormModal.email.$touched) && myFormModal.email.$error.email">E-mail inválido.</span>
+            </div>
+            <div class="form-group">
+              <label>Cargo<span> *<span></label>
+                <select ng-model="Lead.Position" class="form-control" name="position" placeholder="Cargo" required>
+                  <option value="">Selecione</option>
+                  <option value="Analista de marketing">Analista de marketing</option>
+                  <option value="Gerente/Coordenador de Marketing">Gerente/Coordenador de Marketing</option>
+                  <option value="Gerente/Coordenador de Vendas">Gerente/Coordenador de Vendas</option>
+                  <option value="Diretor">Diretor</option>
+                  <option value="Sócio / CEO">Sócio / CEO</option>
+                  <option value="Outros Cargos">Outros Cargos</option>
+                  <option value="Estudante">Estudante</option>
+                </select>
+                <span class="text-danger" ng-show="(myFormModal.$submitted || myFormModal.position.$touched) && myFormModal.position.$error.required">Selecione um item da lista.</span>
+            </div>
+            <div class="form-group">
+              <label>Empresa<span> *<span></label>
+              <input type="text" ng-model="Lead.Company" class="form-control" id="company" name="company" placeholder="Empresa" required>
+              <span class="text-danger" ng-show="(myFormModal.$submitted || myFormModal.company.$touched) && myFormModal.company.$error.required">Preencha esse campo.</span>
+            </div>
+            <div class="form-group">
+              <label>Número de funcionários<span> *<span></label>
+              <select ng-model="Lead.NumberOfEmployees" class="form-control" id="size" name="numberOfEmployees" placeholder="Número de Funcionários" required>
+                <option value="">Selecione</option>
+                <option value="1">1</option>
+                <option value="2-3">2-3</option>
+                <option value="4-10">4-10</option>
+                <option value="11-50">11-50</option>
+                <option value="51-200">51-200</option>
+                <option value="Mais de 200">Mais de 200</option>
+              </select>
+              <span class="text-danger" ng-show="(myFormModal.$submitted || myFormModal.numberOfEmployees.$touched) && myFormModal.numberOfEmployees.$error.required">Selecione um item da lista.</span>
+            </div>
+            <div class="form-group">
+              <label>Área de atuação da empresa<span> *<span></label>
+              <select ng-model="Lead.OccupationArea" class="form-control" id="segment" name="occupationArea" placeholder="Área de Atuação" required>
+                <option value="">Selecione</option>
+                <option value="Software e Cloud">Software e Cloud</option>
+                <option value="Hardware">Hardware</option>
+                <option value="Telecomunicações">Telecomunicações</option>
+                <option value="Educação">Educação</option>
+                <option value="Agência">Agência</option>
+                <option value="Veículo de comunicação">Veículo de comunicação</option>
+                <option value="Consultoria">Consultoria</option>
+                <option value="Serviços corporativos">Serviços corporativos</option>
+                <option value="Ecommerce">Ecommerce</option>
+                <option value="Serviços para o consumidor">Serviços para o consumidor</option>
+                <option value="Turismo e Lazer">Turismo e Lazer</option>
+                <option value="Saúde">Saúde</option>
+                <option value="Industria de manufatura">Industria de manufatura</option>
+                <option value="RH e Recrutamento">RH e Recrutamento</option>
+                <option value="Serviços financeiros">Serviços financeiros</option>
+                <option value="Jurídico">Jurídico</option>
+                <option value="Imóveis">Imóveis</option>
+              </select>
+              <span class="text-danger" ng-show="(myFormModal.$submitted || myFormModal.occupationArea.$touched) && myFormModal.occupationArea.$error.required">Selecione um item da lista.</span>
+            </div>
+            <div class="form-group">
+              <label>Site da empresa<span> *<span></label>
+              <input type="text" ng-model="Lead.Website" class="form-control" id="text" name="website" placeholder="Site da empresa" required>
+              <span class="text-danger" ng-show="(myFormModal.$submitted || myFormModal.website.$touched) && myFormModal.website.$error.required">Preencha esse campo.</span>
+            </div>
+            <button type="button" ng-disabled="myForm.$invalid" ng-click="Send()" class="btn btn-success btn-lg full-width"><span class="icon-book dist-right"></span>Iniciar jornada</button>
+          </form>
+        </div>
+      </div>
+      <!-- end modal content -->
+    </div>
+  </div>
+  <!-- end modal -->
+</div>
+
+
+    <footer>
+  <!-- include jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<!-- include Angular -->
+<script type="text/javascript" src="js/angular/angular.min.js"></script>
+<script type="text/javascript" src="js/angular/angular-route.min.js"></script>
+<script type="text/javascript" src="js/angular/angular-cookies.min.js"></script>
+<script type="text/javascript" src="js/angular/angular-animate.min.js"></script>
+
+<!-- include jQuery UI -->
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+<!-- include bootstrap -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="js/draggableTabs.js"></script>
+
+<script type="text/javascript" src="js/copyTarget.js"></script>
+
+<script type="text/javascript" src="js/btnFixed.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('.draggable-container ul li:last-child a').on('shown.bs.tab', function (e) {
+      $( "div.draggable-container" ).removeClass( "mask" );
+    })
+    $('.draggable-container ul li:last-child a').on('hidden.bs.tab', function (e) {
+      $( "div.draggable-container" ).addClass( "mask" );
+    })
+  });
+</script>
+  <script type="text/javascript" src="js/angular/app/app.js"></script>
+<script type="text/javascript" src="js/angular/app/services/RdStationIntegrationService.js"></script>
+<script type="text/javascript" src="js/angular/app/services/LeadService.js"></script>
+<script type="text/javascript" src="js/angular/app/index/IndexController.js"></script>
+</footer>
+
+
+  </body>
+
+</html>

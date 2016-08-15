@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Your awesome title</title>
+  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://yourdomain.com/results.html">
+  <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="http://yourdomain.com/feed.xml">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather+Sans:100,400,700,300' rel='stylesheet' type='text/css'>
+
+</head>
+
+
+  <body class="body-result">
+    <header class="header">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <img class="brand "alt="Brand" src="img/logo-resultados-digitais.svg">
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+        <div ng-app="myApp" ng-controller="ResultsController" ng-cloak>
+  <div ng-init="Init()">
+    <div class="container-fluid" id="grade">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-offset-2 col-md-8">
+            <div class="my-grade text-center">
+              <h2>[[QueryResult.Name]], a sua nota é</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-offset-2 col-md-8">
+            <div class="box-result">
+              <h3>[[QueryResult.Score]]</h3>
+              <p class="description-result">
+                [[QueryResult.Result]]
+              </p>
+            </div>
+          </div>
+          <div class="bounce"><span class="glyphicon glyphicon-menu-down"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid" id="actionsResult">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="box-actions">
+              <div class="row">
+                <div class="col-md-4"><a class="btn btn-lg btn-success full-width" href="http://materiais.resultadosdigitais.com.br/bate-papo-com-a-rd-lm?utm_medium=diag_mkt_vendas?utm_source=referral?utm_campaign=diag_mkt_vendas" target="_blank">Fale com um consultor</a></div>
+                <div class="col-md-8">
+                  <div class="row">
+                    <div class="col-md-5 text-right">
+                      <a class="btn btn-default" href="" target="_blank"><span class="glyphicon glyphicon-print"></span></a>
+                      <a class="btn btn-default" href="" target="_blank"><span class="glyphicon glyphicon-envelope"></span></a>
+                    </div>
+                    <div class="col-md-7">
+                      <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-link"></span></span>
+                        <input type="text" class="form-control" aria-describedby="basic-addon1" id="copyTarget" ng-model="PageUrl">
+                        <span class="input-group-btn">
+                          <a class="btn btn-default" id="copyButton" type="button" title="" data-original-title="Link copiado!">Copiar</a>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="container-fluid" id="myResult">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h3>Resultado</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="draggable-container">
+              <ul class="nav nav-tabs draggable draggable-center" role="tablist">
+                <li role="presentation" ng-class="{'active': Category == 'Atração'}"><a href="" ng-click="Category = 'Atração'" aria-controls="atrair" role="tab" data-toggle="tab">Atrair</a></li>
+                <li role="presentation" ng-class="{'active': Category == 'Converter'}"><a href="" ng-click="Category = 'Converter'" aria-controls="converter" role="tab" data-toggle="tab">Converter</a></li>
+                <li role="presentation" ng-class="{'active': Category == 'Relacionar'}"><a href="" ng-click="Category = 'Relacionar'" aria-controls="relacionar" role="tab" data-toggle="tab">Relacionar</a></li>
+                <li role="presentation" ng-class="{'active': Category == 'Vendas'}"><a href="" ng-click="Category = 'Vendas'" aria-controls="vender" role="tab" data-toggle="tab">Vender</a></li>
+                <li role="presentation" ng-class="{'active': Category == 'Análise'}"><a href="" ng-click="Category = 'Análise'" aria-controls="analisar" role="tab" data-toggle="tab">Analisar</a></li>
+              </ul>
+            </div>
+            <div id="converter">
+              <div class="step-description">
+                <p ng-show="Category == 'Atração'">Trazer visitantes para o site da empresa é uma das partes mais importantes do funil, já que sem ela nada do resto funcionará. É também a etapa que a maioria das empresas mais tem curiosidade e deseja melhorar.</p>
+                <p ng-show="Category == 'Converter'">Apenas atrair os visitantes não basta. É preciso pegar seus contatos para poder iniciar um relacionamento com eles. A melhor opção para isso é promover ofertas atrativas em Landing Pages.</p>
+                <p ng-show="Category == 'Relacionar'">Relacionamento é a chave para conduzir os Leads até o momento da compra. Esse é o momento do funil que define quais visitantes se tornarão, enfim, clientes. Eduque-os com informações relevantes e desperte neles o desejo/necessidade de consumir o seu produto ou serviço.</p>
+                <p ng-show="Category == 'Vendas'">A hora tão esperada! O relacionamento prévio faz a abordagem de Leads já qualificados e próximos do momento da compra se tornar muito mais fácil e gerar mais resultados.</p>
+                <p ng-show="Category == 'Análise'">Para manter a máquina funcionando e se desenvolvendo, examine cada etapa e identifique o que precisa de ajustes. Garanta que seu Marketing Digital gere cada vez mais resultados.</p>
+              </div>
+              <div class="question-result" ng-repeat="question in QuestionsObj.Questions" ng-show="question.Category == Category">
+                <h3 class="h5">[[question.Id]]) [[question.Question]]</h3>
+                <span ng-repeat="alternative in question.Alternatives" ng-if="question.Answer == alternative.Id">
+                  <blockquote ng-class="{'blockquote-success': alternative.Id == 1, 'blockquote-danger': alternative.Id == 3 || alternative.Id == 4, 'blockquote-warning': alternative.Id == 2}">[[alternative.Alternative]]</blockquote>
+                  <div class="box-result">
+                    <p class="comment">[[alternative.Result]]&nbsp;<a href="[[alternative.Suggestion]]" target="_blank">[[alternative.Suggestion]]</a>
+                    </p>
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <footer>
+  <!-- include jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<!-- include Angular -->
+<script type="text/javascript" src="js/angular/angular.min.js"></script>
+<script type="text/javascript" src="js/angular/angular-route.min.js"></script>
+<script type="text/javascript" src="js/angular/angular-cookies.min.js"></script>
+<script type="text/javascript" src="js/angular/angular-animate.min.js"></script>
+
+<!-- include jQuery UI -->
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+<!-- include bootstrap -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="js/draggableTabs.js"></script>
+
+<script type="text/javascript" src="js/copyTarget.js"></script>
+
+<script type="text/javascript" src="js/btnFixed.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('.draggable-container ul li:last-child a').on('shown.bs.tab', function (e) {
+      $( "div.draggable-container" ).removeClass( "mask" );
+    })
+    $('.draggable-container ul li:last-child a').on('hidden.bs.tab', function (e) {
+      $( "div.draggable-container" ).addClass( "mask" );
+    })
+  });
+</script>
+  <script type="text/javascript" src="js/angular/app/app.js"></script>
+<script type="text/javascript" src="js/angular/app/QuestionsValue.js"></script>
+<script type="text/javascript" src="js/angular/app/services/QuestionsService.js"></script>
+<script type="text/javascript" src="js/angular/app/results/ResultsController.js"></script>
+</footer>
+
+
+  </body>
+
+</html>
