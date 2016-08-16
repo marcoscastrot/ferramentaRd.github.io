@@ -1,4 +1,6 @@
+//Serviço com os métodos que manipulam as informações do questionárop
 app.service('QuestionsService', function () {
+    //Calcula a pontuação do usuário com base no peso das respostas selecionadas
     this.Score = function (Questions) {
     	var obj = { score: 0, result: '' };
     	for (var i = 0; i < Questions.length; i++) {
@@ -16,7 +18,7 @@ app.service('QuestionsService', function () {
 
         return obj;
     };
-
+    //Retorna o resultado com base na pontuação
     this.ResultByScore = function(Score){
 		if (Score >= 9){
     		return 'Parabéns! Parece que sua empresa está trilhando um caminho de sucesso e certamente tem tudo para crescer. Como marketing e vendas precisam buscar melhorias continuas, abaixo apresentamos algumas indicações de materiais mais avançados para que você veja como alavancar ainda mais os seus resultados.';
@@ -28,7 +30,7 @@ app.service('QuestionsService', function () {
     		return 'Você ainda pode melhorar muito a estratégia de marketing e vendas na sua empresa para gerar um crescimento sustentável. Veja abaixo nossos comentários sobre cada uma das suas respostas e a indicação de um material que vai ajudar você a entender qual caminho seguir.';
     	}
     };
-
+    //Monta querystring com as informações do lead e suas respostas. Querystring que sera usada pela tela de resultados
     this.ObjectToHash = function (Questions, Email, Name, Score){
     	var hash = 'name=' + Name + '&email=' + Email + '&score=' + Score;
 
@@ -38,7 +40,7 @@ app.service('QuestionsService', function () {
 
     	return encodeURIComponent(hash);
     };
-
+    //Transforma querystring com os dados do lead e suas respstas em objeto
     this.HashToObject = function (url){
     	var ret = {
     		Name: '',
@@ -73,7 +75,7 @@ app.service('QuestionsService', function () {
 
     	return ret;
     };
-
+    //Atribui as respostas do usuário no objeto do questionário
     this.SetAnswers = function(Questions, Answers){
     	for (var i = 0; i < Questions.length; i++) {
     		for (var j = 0; j < Answers.length; j++) {
@@ -86,7 +88,7 @@ app.service('QuestionsService', function () {
 
     	return Questions;
     };
-
+    //Cria um lista de objetos com as perguntas do questionário e respostas do usuário
     this.CreateAnswerObj = function(Questions){
     	var answers = [];
 		for (var i = 0; i < Questions.length; i++) {

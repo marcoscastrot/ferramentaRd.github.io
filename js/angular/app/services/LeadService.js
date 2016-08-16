@@ -1,3 +1,4 @@
+//Serviço para armezar, buscar e remover informações do lead nos cookies
 app.service("LeadService", ['$cookies', function ($cookies) {
     this.Set = function (Lead) {
         $cookies.putObject('Lead', Lead, { path: '/' });

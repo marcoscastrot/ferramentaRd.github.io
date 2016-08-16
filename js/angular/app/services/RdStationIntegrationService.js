@@ -1,3 +1,4 @@
+//Serviço com as requisições ao RdStation
 app.service('RdStationIntegrationService', ["$http", "$q", function ($http, $q) {
     this.DiagnosticoMktVendasIniciado = function (email, name, position, company, numberOfEmployees, occupationArea, website) {
         var deferred = $q.defer();
@@ -58,7 +59,7 @@ app.service('RdStationIntegrationService', ["$http", "$q", function ($http, $q) 
 
         return deferred.promise;
     };
-
+    //Transforma cada resposta do usuário em um objeto, onde a chave é a pergunta e o valor a resposta
     this.AnswerToData = function(answers){
     	var data = {};
 

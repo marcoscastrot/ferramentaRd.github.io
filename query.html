@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About | Resultados Digitais</title>
+  <title>Your awesome title | Resultados Digitais</title>
   <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 ">
   <!-- OG -->
@@ -40,7 +40,7 @@
 </head>
 
 
-  <body id="landing">
+  <body>
     <header class="header">
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -55,18 +55,12 @@
   </nav>
 </header>
 
-        <article class="post">
 
-  <header class="post-header">
-    <h1 class="post-title">About</h1>
-  </header>
-
-  <div class="post-content">
-    
-
+        <div ng-app="myApp" ng-controller="QueryController" ng-cloak>
+  <div ng-init="Init()">
   </div>
+</div>
 
-</article>
 
     <footer>
   <!-- include jQuery -->
@@ -98,10 +92,13 @@
   });
 </script>
   <script type="text/javascript" src="js/angular/app/app.js"></script>
-<script type="text/javascript" src="js/angular/app/services/RdStationIntegrationService.js"></script>
-<script type="text/javascript" src="js/angular/app/services/LeadService.js"></script>
-<script type="text/javascript" src="js/angular/app/index/IndexController.js"></script>
+<script type="text/javascript" src="js/angular/app/services/QuestionsService.js"></script>
+<script type="text/javascript" src="js/angular/app/services/BitlyService.js"></script>
+<script type="text/javascript" src="js/angular/app/services/ResultService.js"></script>
+<script type="text/javascript" src="js/angular/app/query/QueryController.js"></script>
 </footer>
 
+
   </body>
+
 </html>

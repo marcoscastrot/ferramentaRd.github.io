@@ -1,4 +1,5 @@
-var app = angular.module('myApp', ['ngRoute', 'ngCookies'], ['$interpolateProvider', function($interpolateProvider) {
+//Módulo da aplicação
+var app = angular.module('myApp', ['ngCookies', 'ngAnimate'], ['$interpolateProvider', function($interpolateProvider) {
   $interpolateProvider.startSymbol('[[');
   $interpolateProvider.endSymbol(']]');
 }]);

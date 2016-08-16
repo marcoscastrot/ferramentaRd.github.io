@@ -3,23 +3,44 @@
 
   <head>
   <meta charset="utf-8">
-
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Your awesome title</title>
+  <title>Your awesome title | Resultados Digitais</title>
   <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 ">
+  <!-- OG -->
+	<meta property="og:title" content="Gerador de Jornada de Compra" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://ferramentas.resultadosdigitais.com.br/ferramenta-jornada/" />
+	<meta property="og:image" content="http://ferramentas.resultadosdigitais.com.br/ferramenta-jornada/images/jornada_compra_og.png" />
+	<meta property="og:description" content="Defina e conheça de forma rápida e fácil os passos que os seus potenciais clientes dão até estarem prontos para comprar seu produto ou serviço." />
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="http://yourdomain.com/feed.xml">
-  <link href='https://fonts.googleapis.com/css?family=Merriweather+Sans:100,400,700,300' rel='stylesheet' type='text/css'>
-
+  <link href='https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700,300' rel='stylesheet' type='text/css'>
 </head>
 
 
-  <body>
+  <body id="landing">
     <header class="header">
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -33,7 +54,6 @@
     </div>
   </nav>
 </header>
-
 
         <div ng-app="myApp" ng-controller="IndexController" ng-cloak>
   <div class="container-fluid bg-form" ng-init="Init()">
@@ -76,13 +96,13 @@
             <div class="form-group">
               <label for="name">Nome<span> *<span></label>
               <input type="text" ng-model="Lead.Name" class="form-control" id="name" name="name" placeholder="Nome" required>
-              <span class="text-danger" ng-show="(myForm.$submitted || myForm.name.$touched) && myForm.name.$error.required">Preencha esse campo.</span>
+              <label ng-show="(myForm.$submitted || myForm.name.$touched) && myForm.name.$error.required">Preencha esse campo.</label>
             </div>
             <div class="form-group">
               <label for="email">E-mail<span> *<span></label>
               <input type="email" ng-model="Lead.Email" class="form-control" id="email" name="email" placeholder="E-mail" required>
-              <span class="text-danger" ng-show="(myForm.$submitted || myForm.email.$touched) && myForm.email.$error.required">Preencha esse campo.</span>
-              <span class="text-danger" ng-show="(myForm.$submitted || myForm.email.$touched) && myForm.email.$error.email">E-mail inválido.</span>
+              <label ng-show="(myForm.$submitted || myForm.email.$touched) && myForm.email.$error.required">Preencha esse campo.</label>
+              <label ng-show="(myForm.$submitted || myForm.email.$touched) && myForm.email.$error.email">E-mail inválido.</label>
             </div>
             <div class="form-group">
               <label>Cargo<span> *<span></label>
@@ -96,12 +116,12 @@
                   <option value="Outros Cargos">Outros Cargos</option>
                   <option value="Estudante">Estudante</option>
                 </select>
-                <span class="text-danger" ng-show="(myForm.$submitted || myForm.position.$touched) && myForm.position.$error.required">Selecione um item da lista.</span>
+                <label ng-show="(myForm.$submitted || myForm.position.$touched) && myForm.position.$error.required">Selecione um item da lista.</label>
             </div>
             <div class="form-group">
               <label>Empresa<span> *<span></label>
               <input type="text" ng-model="Lead.Company" class="form-control" id="company" name="company" placeholder="Empresa" required>
-              <span class="text-danger" ng-show="(myForm.$submitted || myForm.company.$touched) && myForm.company.$error.required">Preencha esse campo.</span>
+              <label ng-show="(myForm.$submitted || myForm.company.$touched) && myForm.company.$error.required">Preencha esse campo.</label>
             </div>
             <div class="form-group">
               <label>Número de funcionários<span> *<span></label>
@@ -114,7 +134,7 @@
                 <option value="51-200">51-200</option>
                 <option value="Mais de 200">Mais de 200</option>
               </select>
-              <span class="text-danger" ng-show="(myForm.$submitted || myForm.numberOfEmployees.$touched) && myForm.numberOfEmployees.$error.required">Selecione um item da lista.</span>
+              <label ng-show="(myForm.$submitted || myForm.numberOfEmployees.$touched) && myForm.numberOfEmployees.$error.required">Selecione um item da lista.</label>
             </div>
             <div class="form-group">
               <label>Área de atuação da empresa<span> *<span></label>
@@ -138,12 +158,12 @@
                 <option value="Jurídico">Jurídico</option>
                 <option value="Imóveis">Imóveis</option>
               </select>
-              <span class="text-danger" ng-show="(myForm.$submitted || myForm.occupationArea.$touched) && myForm.occupationArea.$error.required">Selecione um item da lista.</span>
+              <label ng-show="(myForm.$submitted || myForm.occupationArea.$touched) && myForm.occupationArea.$error.required">Selecione um item da lista.</label>
             </div>
             <div class="form-group">
               <label>Site da empresa<span> *<span></label>
               <input type="text" ng-model="Lead.Website" class="form-control" id="text" name="website" placeholder="Site da empresa" required>
-              <span class="text-danger" ng-show="(myForm.$submitted || myForm.website.$touched) && myForm.website.$error.required">Preencha esse campo.</span>
+              <label ng-show="(myForm.$submitted || myForm.website.$touched) && myForm.website.$error.required">Preencha esse campo.</label>
             </div>
             <button type="button" ng-disabled="myForm.$invalid" ng-click="Send()" class="btn btn-success btn-lg full-width"><span class="icon-book dist-right"></span>Começar agora!</button>
           </form>
@@ -184,13 +204,13 @@
             <div class="form-group">
               <label for="name">Nome<span> *<span></label>
               <input type="text" ng-model="Lead.Name" class="form-control" id="name" name="name" placeholder="Nome" required>             
-              <span class="text-danger" ng-show="(myFormModal.$submitted || myFormModal.name.$touched) && myFormModal.name.$error.required">Preencha esse campo.</span>
+              <label ng-show="(myFormModal.$submitted || myFormModal.name.$touched) && myFormModal.name.$error.required">Preencha esse campo.</label>
             </div>
             <div class="form-group">
               <label for="email">E-mail<span> *<span></label>
               <input type="email" ng-model="Lead.Email" class="form-control" id="email" name="email" placeholder="E-mail" required>
-              <span class="text-danger" ng-show="(myFormModal.$submitted || myFormModal.email.$touched) && myFormModal.email.$error.required">Preencha esse campo.</span>
-              <span class="text-danger" ng-show="(myFormModal.$submitted || myFormModal.email.$touched) && myFormModal.email.$error.email">E-mail inválido.</span>
+              <label ng-show="(myFormModal.$submitted || myFormModal.email.$touched) && myFormModal.email.$error.required">Preencha esse campo.</label>
+              <label ng-show="(myFormModal.$submitted || myFormModal.email.$touched) && myFormModal.email.$error.email">E-mail inválido.</label>
             </div>
             <div class="form-group">
               <label>Cargo<span> *<span></label>
@@ -204,12 +224,12 @@
                   <option value="Outros Cargos">Outros Cargos</option>
                   <option value="Estudante">Estudante</option>
                 </select>
-                <span class="text-danger" ng-show="(myFormModal.$submitted || myFormModal.position.$touched) && myFormModal.position.$error.required">Selecione um item da lista.</span>
+                <label ng-show="(myFormModal.$submitted || myFormModal.position.$touched) && myFormModal.position.$error.required">Selecione um item da lista.</label>
             </div>
             <div class="form-group">
               <label>Empresa<span> *<span></label>
               <input type="text" ng-model="Lead.Company" class="form-control" id="company" name="company" placeholder="Empresa" required>
-              <span class="text-danger" ng-show="(myFormModal.$submitted || myFormModal.company.$touched) && myFormModal.company.$error.required">Preencha esse campo.</span>
+              <label ng-show="(myFormModal.$submitted || myFormModal.company.$touched) && myFormModal.company.$error.required">Preencha esse campo.</label>
             </div>
             <div class="form-group">
               <label>Número de funcionários<span> *<span></label>
@@ -222,7 +242,7 @@
                 <option value="51-200">51-200</option>
                 <option value="Mais de 200">Mais de 200</option>
               </select>
-              <span class="text-danger" ng-show="(myFormModal.$submitted || myFormModal.numberOfEmployees.$touched) && myFormModal.numberOfEmployees.$error.required">Selecione um item da lista.</span>
+              <label ng-show="(myFormModal.$submitted || myFormModal.numberOfEmployees.$touched) && myFormModal.numberOfEmployees.$error.required">Selecione um item da lista.</label>
             </div>
             <div class="form-group">
               <label>Área de atuação da empresa<span> *<span></label>
@@ -246,12 +266,12 @@
                 <option value="Jurídico">Jurídico</option>
                 <option value="Imóveis">Imóveis</option>
               </select>
-              <span class="text-danger" ng-show="(myFormModal.$submitted || myFormModal.occupationArea.$touched) && myFormModal.occupationArea.$error.required">Selecione um item da lista.</span>
+              <label ng-show="(myFormModal.$submitted || myFormModal.occupationArea.$touched) && myFormModal.occupationArea.$error.required">Selecione um item da lista.</label>
             </div>
             <div class="form-group">
               <label>Site da empresa<span> *<span></label>
               <input type="text" ng-model="Lead.Website" class="form-control" id="text" name="website" placeholder="Site da empresa" required>
-              <span class="text-danger" ng-show="(myFormModal.$submitted || myFormModal.website.$touched) && myFormModal.website.$error.required">Preencha esse campo.</span>
+              <label ng-show="(myFormModal.$submitted || myFormModal.website.$touched) && myFormModal.website.$error.required">Preencha esse campo.</label>
             </div>
             <button type="button" ng-disabled="myForm.$invalid" ng-click="Send()" class="btn btn-success btn-lg full-width"><span class="icon-book dist-right"></span>Iniciar jornada</button>
           </form>
@@ -263,14 +283,12 @@
   <!-- end modal -->
 </div>
 
-
     <footer>
   <!-- include jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 <!-- include Angular -->
 <script type="text/javascript" src="js/angular/angular.min.js"></script>
-<script type="text/javascript" src="js/angular/angular-route.min.js"></script>
 <script type="text/javascript" src="js/angular/angular-cookies.min.js"></script>
 <script type="text/javascript" src="js/angular/angular-animate.min.js"></script>
 
@@ -281,8 +299,6 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 <script type="text/javascript" src="js/draggableTabs.js"></script>
-
-<script type="text/javascript" src="js/copyTarget.js"></script>
 
 <script type="text/javascript" src="js/btnFixed.js"></script>
 
@@ -302,7 +318,5 @@
 <script type="text/javascript" src="js/angular/app/index/IndexController.js"></script>
 </footer>
 
-
   </body>
-
 </html>
