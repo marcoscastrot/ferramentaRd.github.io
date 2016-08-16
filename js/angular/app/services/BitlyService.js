@@ -5,7 +5,7 @@ app.service('BitlyService', ["$http", "$q", function ($http, $q) {
 
         var req = {
             method: 'GET',
-            url: 'http://api.bitly.com/v3/shorten?format=json&apiKey=R_7d8776cf13bd45b0bf4fa9376b1212c4&login=marketingrd&longUrl=' + url,
+            url: 'https://api.bitly.com/v3/shorten?format=json&apiKey=R_7d8776cf13bd45b0bf4fa9376b1212c4&login=marketingrd&longUrl=' + url,
             headers: {
                 'Content-type': 'application/json'
             }
